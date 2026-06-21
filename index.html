@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      name="theme-color"
+      content="#ffffff"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#111111"
+      media="(prefers-color-scheme: dark)"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%232563eb'/%3E%3Ctext x='50' y='72' font-size='64' font-family='Inter,sans-serif' font-weight='600' fill='white' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500&display=swap"
+    />
+    <title>Draav Jain</title>
+    <meta
+      name="description"
+      content="Frontend engineer with 2+ years of experience building enterprise-grade web applications with React and JavaScript."
+    />
+    <meta property="og:title" content="Draav Jain" />
+    <meta
+      property="og:description"
+      content="Frontend engineer with 2+ years of experience building enterprise-grade web applications with React and JavaScript."
+    />
+    <meta property="og:type" content="website" />
+    <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --bg: #ffffff;
+        --text: #1a1a1a;
+        --muted: #6b6b6b;
+        --border: #e5e5e5;
+        --accent: #2563eb;
+        --accent-muted: #93b4f5;
+        --skill-bg: #f5f5f5;
+        --skill-border: #e0e0e0;
+        --serif: "Newsreader", Georgia, serif;
+        --sans: "Inter", -apple-system, system-ui, sans-serif;
+      }
+
+      html[data-theme="dark"] {
+        --bg: #111111;
+        --text: #e5e5e5;
+        --muted: #999999;
+        --border: #2a2a2a;
+        --accent: #6b9cf7;
+        --accent-muted: #3a5a8a;
+        --skill-bg: #1a1a1a;
+        --skill-border: #2a2a2a;
+      }
+
+      html {
+        font-size: 18px;
+      }
+      @media (prefers-reduced-motion: no-preference) {
+        html {
+          scroll-behavior: smooth;
+        }
+      }
+
+      body {
+        font-family: var(--sans);
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.75;
+        max-width: 680px;
+        margin: 0 auto;
+        padding: 3rem 1.5rem 2rem;
+        transition: background 0.3s, color 0.3s;
+      }
+
+      a {
+        color: var(--text);
+        text-decoration-color: var(--muted);
+        text-underline-offset: 3px;
+        transition: text-decoration-color 0.2s;
+      }
+      a:hover {
+        text-decoration-color: var(--text);
+      }
+
+      /* ── Nav ── */
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 4.5rem;
+      }
+      .nav-name {
+        font-family: var(--sans);
+        font-weight: 500;
+        font-size: 1rem;
+        text-decoration: none;
+        color: var(--text);
+        letter-spacing: -0.01em;
+      }
+      .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+        font-size: 0.85rem;
+        color: var(--muted);
+      }
+      .nav-right a {
+        color: var(--muted);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .nav-right a:hover {
+        color: var(--text);
+      }
+      .nav-right .sep {
+        margin: 0 0.25rem;
+      }
+      .theme-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--muted);
+        font-size: 1rem;
+        padding: 0.2rem;
+        margin-left: 0.5rem;
+        transition: color 0.2s;
+        display: flex;
+        align-items: center;
+      }
+      .theme-btn:hover {
+        color: var(--text);
+      }
+      .theme-btn .icon-sun {
+        display: none;
+      }
+      html[data-theme="dark"] .theme-btn .icon-sun {
+        display: block;
+      }
+      html[data-theme="dark"] .theme-btn .icon-moon {
+        display: none;
+      }
+
+      /* ── Intro ── */
+      .intro {
+        margin-bottom: 4rem;
+      }
+      .intro p,
+      .intro h1 {
+        font-size: 1rem;
+        line-height: 1.75;
+        font-weight: 400;
+        margin-bottom: 1.25rem;
+        color: var(--text);
+      }
+      .intro em {
+        font-family: var(--serif);
+        font-style: italic;
+      }
+      .open-to {
+        display: inline-block;
+        font-size: 0.92rem;
+        color: var(--muted);
+        margin-top: 0.25rem;
+        font-style: italic;
+        font-family: var(--serif);
+      }
+
+      /* ── Section ── */
+      .section-title {
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--muted);
+        margin-bottom: 2rem;
+        letter-spacing: 0.01em;
+      }
+
+      /* ── Skills ── */
+      .skills-section {
+        margin-bottom: 4rem;
+      }
+      .skills-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      .skill-tag {
+        font-size: 0.78rem;
+        padding: 0.3rem 0.7rem;
+        border-radius: 2px;
+        background: var(--skill-bg);
+        border: 1px solid var(--skill-border);
+        color: var(--text);
+        white-space: nowrap;
+        letter-spacing: 0.01em;
+      }
+      .skill-tag.primary {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #fff;
+      }
+
+      /* ── Projects ── */
+      .projects-section {
+        margin-bottom: 4rem;
+      }
+      .project-links {
+        margin-top: 0.8rem;
+        font-size: 0.82rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .project-links a {
+        color: var(--muted);
+        text-decoration: none;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 1px;
+        transition: color 0.2s, border-color 0.2s;
+      }
+      .project-links a:hover {
+        color: var(--text);
+        border-color: var(--text);
+      }
+      .project-links .sep {
+        color: var(--muted);
+        opacity: 0.6;
+      }
+
+      /* ── Work Experience ── */
+      .work-section {
+        margin-bottom: 4rem;
+      }
+      .work-item {
+        margin-bottom: 2.5rem;
+        position: relative;
+        padding-left: 1rem;
+        border-left: 1.5px solid var(--border);
+      }
+      .work-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 0.2rem;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      .work-company {
+        font-weight: 500;
+        font-size: 1rem;
+      }
+      .work-date {
+        font-size: 0.8rem;
+        color: var(--muted);
+        white-space: nowrap;
+      }
+      .work-role {
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-bottom: 0.6rem;
+        font-style: italic;
+        font-family: var(--serif);
+      }
+      .work-item ul {
+        list-style: none;
+      }
+      .work-item li {
+        font-size: 0.9rem;
+        color: var(--text);
+        line-height: 1.7;
+        margin-bottom: 0.4rem;
+        padding-left: 1.2rem;
+        position: relative;
+      }
+      .work-item li::before {
+        content: "—";
+        position: absolute;
+        left: 0;
+        color: var(--muted);
+      }
+
+      /* ── Recognition ── */
+      .recognition-section {
+        margin-bottom: 4rem;
+      }
+      .award-item {
+        margin-bottom: 1.5rem;
+        padding-left: 1rem;
+        border-left: 1.5px solid var(--border);
+      }
+      .award-name {
+        font-weight: 500;
+        font-size: 0.95rem;
+      }
+      .award-org {
+        font-size: 0.82rem;
+        color: var(--muted);
+        font-style: italic;
+        font-family: var(--serif);
+        margin-bottom: 0.3rem;
+      }
+      .award-desc {
+        font-size: 0.88rem;
+        color: var(--text);
+        line-height: 1.65;
+      }
+
+      /* ── Footer ── */
+      footer {
+        margin-top: 5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--border);
+      }
+      .footer-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: 0.75rem;
+      }
+      .footer-links {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-size: 0.82rem;
+      }
+      .footer-links a {
+        color: var(--muted);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .footer-links a:hover {
+        color: var(--text);
+      }
+      .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.78rem;
+        color: var(--muted);
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      /* ── Responsive ── */
+      @media (max-width: 600px) {
+        html {
+          font-size: 16px;
+        }
+        body {
+          padding: 2rem 1.25rem 1.5rem;
+        }
+        nav {
+          position: relative;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 1rem;
+          margin-bottom: 3rem;
+        }
+        .nav-right {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.5rem;
+          font-size: 0.9rem;
+        }
+        .nav-right .sep,
+        .nav-right > span[style] {
+          display: none;
+        }
+        .theme-btn {
+          position: absolute;
+          top: 0;
+          right: 0;
+          margin-left: 0;
+          padding: 0;
+        }
+        .work-header {
+          flex-direction: column;
+          gap: 0.15rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="/" class="nav-name">Draav Jain</a>
+      <div class="nav-right">
+        <a href="#experience">experience</a>
+        <span class="sep">/</span>
+        <a href="#projects">projects</a>
+        <span class="sep">/</span>
+        <a href="#recognition">recognition</a>
+        <span class="sep">/</span>
+        <a href="mailto:draavjain2001@gmail.com">resume</a>
+        <span style="margin-left: 0.25rem; color: var(--muted)">·</span>
+        <button
+          class="theme-btn"
+          onclick="toggleTheme()"
+          aria-label="Toggle theme"
+        >
+          <svg
+            class="icon-moon"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg
+            class="icon-sun"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="12" cy="12" r="4"></circle>
+            <line x1="12" y1="2" x2="12" y2="4"></line>
+            <line x1="12" y1="20" x2="12" y2="22"></line>
+            <line x1="4.93" y1="4.93" x2="6.34" y2="6.34"></line>
+            <line x1="17.66" y1="17.66" x2="19.07" y2="19.07"></line>
+            <line x1="2" y1="12" x2="4" y2="12"></line>
+            <line x1="20" y1="12" x2="22" y2="12"></line>
+            <line x1="4.93" y1="19.07" x2="6.34" y2="17.66"></line>
+            <line x1="17.66" y1="6.34" x2="19.07" y2="4.93"></line>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <section class="intro">
+      <h1>
+        Frontend engineer with 2+ years of experience building enterprise-grade
+        web applications with React and JavaScript. I focus on performance,
+        scalable architecture, and shipping products that hold up under
+        real-world load.
+      </h1>
+      <p>
+        Currently at Newgen Software, where I've owned the end-to-end frontend
+        of a large-scale ECM platform and built a browser-based admin
+        application from the ground up.
+      </p>
+      <p>
+        You can find me on
+        <a href="https://github.com/DJ081" target="_blank" rel="noopener"
+          >GitHub</a
+        >
+        and
+        <a
+          href="https://www.linkedin.com/in/draav-jain-818991210/"
+          target="_blank"
+          rel="noopener"
+          >LinkedIn</a
+        >, or reach out at
+        <a href="mailto:draavjain2001@gmail.com">draavjain2001@gmail.com</a> if
+        you'd like to chat about roles or interesting products.
+      </p>
+      <span class="open-to">Open to frontend roles.</span>
+    </section>
+
+    <section class="skills-section">
+      <p class="section-title">Skills</p>
+      <div class="skills-row">
+        <span class="skill-tag primary">React</span>
+        <span class="skill-tag primary">JavaScript</span>
+        <span class="skill-tag primary">TypeScript</span>
+        <span class="skill-tag">Redux</span>
+        <span class="skill-tag">Angular</span>
+        <span class="skill-tag">HTML</span>
+        <span class="skill-tag">CSS</span>
+        <span class="skill-tag">MySQL</span>
+        <span class="skill-tag">Jest</span>
+        <span class="skill-tag">React Testing Library</span>
+        <span class="skill-tag">Tailwind CSS</span>
+        <span class="skill-tag">C++</span>
+        <span class="skill-tag">Java</span>
+        <!-- <span class="skill-tag">Git</span> -->
+        <!-- <span class="skill-tag">Jira</span> -->
+        <!-- <span class="skill-tag">Burp Suite</span> -->
+        <!-- <span class="skill-tag">Acunetix</span> -->
+      </div>
+    </section>
+
+    <section class="work-section" id="experience">
+      <p class="section-title">Work experience</p>
+
+      <div class="work-item">
+        <div class="work-header">
+          <span class="work-company">Newgen Software Technologies</span>
+          <span class="work-date">Jan 2024 – present · Noida</span>
+        </div>
+        <div class="work-role">Software Design Engineer, Frontend</div>
+        <ul>
+          <li>
+            Built the OSA Web Application from scratch — migrating a legacy
+            thick-client admin system to a scalable, browser-based solution
+            using React, with full ownership of routing, state, UI, and
+            deployment.
+          </li>
+          <li>
+            Reduced dashboard load time by 50% for enterprise clients by moving
+            CDN-hosted dependencies to locally served assets.
+          </li>
+          <li>
+            Replaced legacy XML-based hook configurations with a UI-driven,
+            database-backed API Hook Configuration Interface.
+          </li>
+          <li>
+            Implemented dynamic timezone conversion across all date-time fields,
+            improving accuracy for 1,000+ global users.
+          </li>
+          <li>
+            Resolved 250+ critical bugs and mitigated 100+ security
+            vulnerabilities flagged by enterprise security scans (Acunetix, Burp
+            Suite).
+          </li>
+          <li>
+            Worked with global clients including Vanguard, QBE, and Nissan to
+            ship high-impact features and customizations.
+          </li>
+        </ul>
+      </div>
+
+      <div class="work-item">
+        <div class="work-header">
+          <span class="work-company">Bharti Airtel</span>
+          <span class="work-date">Jun – Aug 2023</span>
+        </div>
+        <div class="work-role">Frontend Developer Intern</div>
+        <ul>
+          <li>
+            Developed reusable React components with client-side routing and
+            built responsive UI screens using React, JavaScript, HTML5, and
+            CSS3.
+          </li>
+          <li>
+            Integrated backend APIs and collaborated with the team on
+            production-level frontend workflows.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="projects-section" id="projects">
+      <p class="section-title">Projects</p>
+
+      <div class="work-item">
+        <div class="work-header">
+          <span class="work-company">GitHub User Search</span>
+        </div>
+        <div class="work-role">React JS · FusionCharts API · React Icons</div>
+        <ul>
+          <li>
+            Search any GitHub user and visualize their activity data
+            interactively using the FusionCharts API, with authentication built
+            in.
+          </li>
+        </ul>
+        <div class="project-links">
+          <a
+            href="https://search-github-user08.netlify.app/login"
+            target="_blank"
+            rel="noopener"
+            >Live demo</a
+          >
+        </div>
+      </div>
+
+      <div class="work-item">
+        <div class="work-header">
+          <span class="work-company">E-commerce Store</span>
+        </div>
+        <div class="work-role">
+          React JS · React Router Dom · Axios · Styled Components
+        </div>
+        <ul>
+          <li>
+            Full-featured store with product search, category filtering, and
+            cart — integrated with authentication and a payment gateway.
+          </li>
+        </ul>
+        <div class="project-links">
+          <a
+            href="https://comfy-sloth-0811.netlify.app/"
+            target="_blank"
+            rel="noopener"
+            >Live demo</a
+          >
+        </div>
+      </div>
+
+      <div class="work-item">
+        <div class="work-header">
+          <span class="work-company">Chat Application</span>
+        </div>
+        <div class="work-role">React JS · Firebase</div>
+        <ul>
+          <li>
+            Realtime private chat application with live message sync powered by
+            Firebase.
+          </li>
+        </ul>
+        <div class="project-links">
+          <a
+            href="https://chat-application-08.netlify.app/"
+            target="_blank"
+            rel="noopener"
+            >Live demo</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="recognition-section" id="recognition">
+      <p class="section-title">Recognition</p>
+
+      <div class="award-item">
+        <div class="award-name">Pinnacle Performance Award</div>
+        <div class="award-org">Newgen Software</div>
+        <div class="award-desc">
+          Recognised for exceptional contribution in building the OSA Web
+          Application — transforming a legacy thick-client administration system
+          into a modern, scalable web platform.
+        </div>
+      </div>
+
+      <div class="award-item">
+        <div class="award-name">High Five Award</div>
+        <div class="award-org">Newgen Software</div>
+        <div class="award-desc">
+          Awarded for delivering first-time-right solutions by efficiently
+          resolving critical production bugs and high-priority client
+          requirements with minimal rework.
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-top">
+        <div class="footer-links">
+          <a href="https://github.com/DJ081" target="_blank" rel="noopener"
+            >GitHub</a
+          >
+          <a
+            href="https://www.linkedin.com/in/draav-jain/"
+            target="_blank"
+            rel="noopener"
+            >LinkedIn</a
+          >
+          <a href="mailto:draavjain2001@gmail.com">Email</a>
+          <a href="tel:9971058170">+91 9971058170</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>Currently in India</span>
+      </div>
+    </footer>
+
+    <script>
+      function toggleTheme() {
+        const html = document.documentElement;
+        const current = html.getAttribute("data-theme");
+        html.setAttribute("data-theme", current === "dark" ? "light" : "dark");
+        localStorage.setItem("theme", current === "dark" ? "light" : "dark");
+      }
+      (function () {
+        const saved = localStorage.getItem("theme");
+        if (saved) {
+          document.documentElement.setAttribute("data-theme", saved);
+        } else if (
+          window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches
+        ) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
+  </body>
+</html>
